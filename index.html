@@ -179,6 +179,80 @@
             sphere5.isVisible = false;
             sphere5.position.x = 4;
 
+            //Links to GitHub and portfolio
+            var advancedTexture7 = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+
+                // GitHub button
+                var buttonGithub = document.createElement("button");
+                buttonGithub.style.position = "fixed";
+                buttonGithub.style.top = "10px";
+                buttonGithub.style.right = "10px";
+                buttonGithub.style.borderRadius = "60px";
+                buttonGithub.style.margin = "10px";
+                buttonGithub.style.width = "60px";
+                buttonGithub.style.height = "60px";
+                buttonGithub.style.backgroundColor = "white";
+                buttonGithub.style.backgroundImage = "url('textures/github.png')";
+                buttonGithub.style.backgroundSize = "contain";
+                buttonGithub.style.backgroundRepeat = "no-repeat";
+                buttonGithub.style.border = "none";
+                buttonGithub.style.outline = "none";
+                buttonGithub.title = "My GitHub profile";
+
+                document.body.appendChild(buttonGithub);
+
+                // Hover effect 
+                buttonGithub.addEventListener("mouseover", function () { 
+                    buttonGithub.style.transform = "scale(1.1)"; 
+                    buttonGithub.style.boxShadow = "0px 0px 24px rgba(0, 0, 0, 0.5)"; 
+                }); 
+                
+                buttonGithub.addEventListener("mouseout", function () { 
+                    buttonGithub.style.transform = "scale(1)"; 
+                    buttonGithub.style.boxShadow = "none"
+                });
+
+                // Navigate to GitHub page when the button is clicked
+                buttonGithub.addEventListener("click", function () {
+                    window.location.href = "https://github.com/EricGoncalvesJE";
+                });
+
+                // 3D Portfolio button
+                var button3DPortfolio = document.createElement("button");
+                button3DPortfolio.style.position = "fixed";
+                button3DPortfolio.style.top = "10px";
+                button3DPortfolio.style.right = "80px";
+                button3DPortfolio.style.borderRadius = "60px";
+                button3DPortfolio.style.margin = "10px";
+                button3DPortfolio.style.width = "60px";
+                button3DPortfolio.style.height = "60px";
+                button3DPortfolio.style.backgroundColor = "white"; // Match the GitHub button style
+                button3DPortfolio.style.backgroundImage = "url('textures/logo.png')"; // Replace with your portfolio image path
+                button3DPortfolio.style.backgroundSize = "150%";
+                button3DPortfolio.style.backgroundPosition = "center";
+                button3DPortfolio.style.backgroundRepeat = "no-repeat"; 
+                button3DPortfolio.style.border = "none"; 
+                button3DPortfolio.style.outline = "none";
+                button3DPortfolio.title = "My portfolio";
+
+                document.body.appendChild(button3DPortfolio);
+
+                // Hover effect 
+                button3DPortfolio.addEventListener("mouseover", function () { 
+                    button3DPortfolio.style.transform = "scale(1.1)"; 
+                    button3DPortfolio.style.boxShadow = "0px 0px 24px rgba(0, 0, 0, 0.5)"; 
+                }); 
+                
+                button3DPortfolio.addEventListener("mouseout", function () { 
+                    button3DPortfolio.style.transform = "scale(1)"; 
+                    button3DPortfolio.style.boxShadow = "none"
+                });
+
+                // Navigate to 3D portfolio page when the button is clicked
+                button3DPortfolio.addEventListener("click", function () {
+                    window.location.href = "https://ericgoncalvesje.github.io/ReactPortfolio/";
+                });
+
             // HDRIs
             var hdrTextures = [
                 new BABYLON.CubeTexture("textures/outside.env", scene),
@@ -193,7 +267,7 @@
             var currentTextureIndex = 0;
             var sky = scene.createDefaultSkybox(hdrTextures[currentTextureIndex], true, 1000, 0.3);
 
-          // Create a button
+          // Create a background changer button
             var advancedTexture6 = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
 
             var button = document.createElement("button");
@@ -202,14 +276,14 @@
             button.style.top = "50%";
             button.style.transform = "translateY(-50%)";
             button.style.borderRadius = "14px";
-            button.style.border = "5px dashed white";
+            button.style.border = "2px solid white";
             button.style.right = "0px";
             button.style.margin = "25px";
             button.style.width = "20%";
             button.style.height = "15%";
             button.style.backgroundColor = "black";
             button.style.color = "white";
-            button.style.fontSize = "2vw"; // Use viewport width units for the font size
+            button.style.fontSize = "2vw";
 
             document.body.appendChild(button);
 
